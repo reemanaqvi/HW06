@@ -17,10 +17,38 @@
 
 # Body
 
+def uses_all(w, req):
+	for letter in req:
+		if letter not in w:
+			return False
+		else:
+			return True
+
+
+def uses_vowels():
+	f = open('words.txt')
+	req = "aeiou"
+	count = 0
+	for line in f:
+		if uses_all (line, req):
+			count += 1
+			
+
+def uses_aeiouy():
+	f = open('words.txt')
+	req = "aeiouy"
+	count = 0
+	for line in f:
+		if uses_all (line, req):
+			count += 1
+		
+
 
 ##############################################################################
 def main():
     pass  # Call your function(s) here.
-
+    print uses_all("betwirknd", "bg")
+    uses_vowels()
+    uses_aeiouy()
 if __name__ == '__main__':
     main()

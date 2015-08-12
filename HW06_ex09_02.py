@@ -14,10 +14,23 @@
 
 # Body
 
+def has_no_e():
+	f = open('words.txt')	
+	e_count = 0.0
+	total_lines = 0.0
+	for line in f:
+		if 'e' not in line:
+			print line
+			e_count +=1	
+		total_lines +=1
+	words_no_e = (e_count/total_lines) * 100 
+	print str(words_no_e) + "%"
+			
+
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
-
+     # Call your function(s) here.
+    has_no_e()
 if __name__ == '__main__':
     main()

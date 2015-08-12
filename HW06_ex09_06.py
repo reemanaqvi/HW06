@@ -13,11 +13,23 @@
 # Imports
 
 # Body
-
+def is_abecedarian(word):
+	if len(word) <= 1:
+		return True
+	if word[0] > word[1]:
+		return False
+	else:
+		return is_abecedarian(word[1:])
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
-
+    # pass  # Call your function(s) here.
+    counter = 0
+    fin = open("words.txt", "r")
+    for word in fin:
+    	if is_abecedarian(word):
+    		counter +=1
+    fin.close()
+    print ("The number of abecedarian words is: %d") %(counter)
 if __name__ == '__main__':
     main()
